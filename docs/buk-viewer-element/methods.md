@@ -1,0 +1,400 @@
+---
+layout: default
+title: Methods
+permalink: /methods
+parent: BukViewerElement
+nav_order: 1
+---
+
+# Methods
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
+---
+
+# 초기화
+
+## init(config)
+
+뷰어를 초기화한다.
+
+### Parameters
+{: .no_toc }
+
+| Name     | Type                      | Description |
+| -------- | ------------------------- | ----------- |
+| `config` | [`LibConfig`](/libconfig#libconfig-1) | 초기화 옵션           |
+
+### Returns
+{: .no_toc }
+
+[`LibConfig`](/libconfig#libconfig-1)
+
+---
+
+# 책 로드 및 페이지 이동
+
+## openBook(bid, iid?, pageOrAnchor?, query?)
+
+책을 로드하거나 지정한 페이지로 이동한다.
+
+### Parameters
+{: .no_toc }
+
+| Name           | Type                     | Description                                                                                                |
+| -------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `bid`          | `string`                 | 책 아이디                                                                                                  |
+| `iid`          | `string`                 | 아이템 아이디                                                                                   |
+| `pageOrAnchor` | `string | number`       | 아이템 내 위치<br /><br />- 진행률 `0\.\d+`<br />- 하이라이트 범위 `\d+-\d+`<br />- 요소 아이디 |
+| `query`        | `{ [key: string]: any }` | 페이지 표시에 필요한 기타 파라미터<br>[Address](/address#query-parameters) 참고                           |
+
+## openBookWithURL(url)
+
+북이오 콘텐츠 주소 체계에 해당하는 URL을 이용하여 책을 로드하거나 지정한 페이지로 이동한다.
+
+### Parameters
+{: .no_toc }
+
+| Name  | Type     | Description |
+| ----- | -------- | ----------- |
+| `url` | `string` |       |
+
+## prevPage()
+
+이전 페이지로 이동한다.
+
+## nextPage()
+
+다음 페이지로 이동한다.
+
+## goToPrintPage(page)
+
+EPUB의 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-pagelist)에 명시된 종이책 페이지로 이동한다. EPUB에 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-pagelist)가 없는 경우 아무런 동작도 하지 않는다.
+
+### Parameters
+{: .no_toc }
+
+| Name   | Type     | Description          |
+| ------ | -------- | -------------------- |
+| `page` | `number` | 이동할 종이책 페이지 |
+
+---
+
+# 현재 상태 가져오기
+
+## getCurrentAddress()
+
+현재 표시중인 페이지의 주소를 가져온다.
+
+### Returns
+{: .no_toc }
+
+`Address | undefined`
+
+## getCurrentSettings()
+
+현재 읽기 설정을 가져온다.
+
+### Returns
+{: .no_toc }
+
+[`Settings`](/settings#settings-1)
+
+## getFontsCurrentlyAvailable()
+
+LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목록을 가져온다.
+
+### Returns
+{: .no_toc }
+
+`string[]`
+
+---
+
+# 읽기 설정 변경
+
+## changeTheme(theme)
+
+테마를 변경한다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type                           | Description |
+| ------- | ------------------------------ | ----------- |
+| `theme` | [`Theme`](/settings#theme) |             |
+
+## changeFontFace(fontFace)
+
+폰트를 변경한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type     | Description                                                        |
+| ---------- | -------- | ------------------------------------------------------------------ |
+| `fontFace` | `string` | `'default'` 또는 `LibConfig.fonts`에 정의된 `fontFamilies` 중 하나 |
+
+## changeFontSize(value, isAbsolute?)
+
+폰트 사이즈를 변경한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type      | Description                                                                                                      |
+| ------------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
+| `value`      | `number`  | `isAbsolute`가 `false`일 경우 두 가지 값 `축소: -1, 확대: 1`<br/>`isAbsolute`가 `true`일 경우 퍼센트 값 `50~500` |
+| `isAbsolute` | `boolean` |                                                                                                       |
+
+## changePagingMode(pagingMode)
+
+페이지/스크롤 모드를 설정한다. Reflowable 책에서만 동작한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type                                     | Description |
+| ------------ | ---------------------------------------- | ----------- |
+| `pagingMode` | [`PagingMode`](/settings#pagingmode) |             |
+
+## setPageAnimation(isActive)
+
+페이지 넘김 애니메이션을 사용할지 여부를 설정한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type      | Description |
+| ---------- | --------- | ----------- |
+| `isActive` | `boolean` |             |
+
+## setMultiColumn(isActive)
+
+한 페이지/두 페이지 보기 모드를 설정한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type      | Description                                       |
+| ---------- | --------- | ------------------------------------------------- |
+| `isActive` | `boolean` | `false` 한 페이지 보기<br />`true` 두 페이지 보기 |
+
+## setClickToPlayMediaOverlay(isActive)
+
+미디어 오버레이 요소를 클릭하여 재생을 시작할 지 여부를 설정한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type      | Description |
+| ---------- | --------- | ----------- |
+| `isActive` | `boolean` |             |
+
+---
+
+# 책 내 검색
+
+## search(keyword, callback)
+
+현재 책 내에서 주어진 키워드로 검색하고, 결과를 담아 콜백을 호출한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type                                       | Description    |
+| ---------- | ------------------------------------------ | -------------- |
+| `keyword`  | `string`                                   | 키워드         |
+| `callback` | `(result: ContentsSearchResult[]) => void` | 검색 완료 콜백 |
+
+### Returns
+{: .no_toc }
+
+`() => void`
+
+검색 중단 시 호출할 함수 
+
+---
+
+# 어노테이션(하이라이트 및 북마크)
+
+## setAnnotations(annotations)
+
+뷰어가 표시할 어노테이션 목록을 셋팅한다. 셋팅 즉시 페이지의 하이라이트 및 북마크 상태도 함께 업데이트 된다.
+
+### Parameters
+{: .no_toc }
+
+| Name          | Type                              | Description |
+| ------------- | --------------------------------- | ----------- |
+| `annotations` | [`Annotation[]`](/annotation#annotation-1) |             |
+
+## toggleBookmark()
+
+북마크를 토글한다. 기존 북마크 상태에 따라 [`annotationCreated`](/events#annotationcreated), [`annotationRemoved`](/events#annotationremoved) 이벤트가 발생한다.
+
+## getHighlightsFromRange(range)
+
+`range`를 포함하고 있는 하이라이트에 대한 정보를 가져온다. 텍스트 선택 시 컨텍스트 메뉴 표시에 이용한다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| `range` | `Range` |             |
+
+### Returns
+{: .no_toc }
+
+하이라이트에 해당하는 Range 및 Annotation 목록
+
+`{ range: Range; annotation: Annotation }[]`
+
+## createHighlight(range, styleClass, options?)
+
+`range`에 하이라이트를 생성하며, [`annotationCreated`](/events#annotationcreated) 이벤트가 발생한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type                                        | Description                                                                                                                                                         |
+| ------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `range`      | `Range`                                     | 하이라이트할 Range                                                                                                                                                  |
+| `styleClass` | `string`                                    | 하이라이트 스타일 클래스 이름                                                                                                                                       |
+| `options`    | `{ expandToWord: boolean; merge: boolean }` | 하이라이트 동작 옵션<br>- expandToWord: `range`를 단어 단위까지 확장하여 하이라이트 (기본값: `true`)<br>- merge: 겹치는 하이라이트 머지 (기본값: `true`) |
+
+### Returns
+{: .no_toc }
+
+`{ annotation: Annotation; mergedAnnotations: Annotation[] }` \| `null`
+
+하이라이트를 통해 생성된 어노테이션, 머지된 어노테이션 목록. 하이라이트 실패 시 `null`.
+
+## changeHighlight(range, styleClass)
+
+`range`에 해당하는 하이라이트의 스타일 클래스를 변경하며, [`annotationChanged`](/events#annotationchanged) 이벤트가 발생한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type     | Description                   |
+| ------------ | -------- | ----------------------------- |
+| `range`      | `Range`  | 변경할 하이라이트의 Range                  |
+| `styleClass` | `string` | LibConfig에 지정한 스타일 클래스 이름 |
+
+### Returns
+{: .no_toc }
+
+[`Annotation`](/annotation#annotation-1) \| `null`
+
+변경된 어노테이션 (변경 후 데이터). `range`에 해당하는 하이라이트가 없거나 변경 실패 시 `null`.
+
+## removeHighlight(range)
+
+`range`에 해당하는 하이라이트를 삭제하며, [`annotationRemoved`](/events#annotationremoved) 이벤트가 발생한다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type    | Description  |
+| ------- | ------- | ------------ |
+| `range` | `Range` | 삭제할 하이라이트의 Range |
+
+### Returns
+{: .no_toc }
+
+[`Annotation`](/annotation#annotation-1) \| `null`
+
+삭제된 어노테이션. `range`에 해당하는 하이라이트가 없거나 삭제 실패 시 `null`.
+
+&nbsp;
+
+⚠️ `toggleBookmark`, `createHighlight`, `changeHighlight`, `removeHighlight`는 페이지에 북마크 및 하이라이트를 **표시**하고 결과를 담은 이벤트를 발생시키는 역할을 하며, `setAnnotations`를 통해 전달받은 Annotation 목록은 업데이트**하지 않는다**. 따라서 발생하는 이벤트에 따라 뷰어 바깥에서 가지고 있는 Annotation 목록을 업데이트 해준 후 업데이트 된 목록을 다시 `setAnnotation`을 통하여 뷰어에 전달해주어야 한다.
+{: .bg-yellow-000 .p-3 }
+
+---
+
+## getSelection()
+
+현재 선택된 텍스트에 대한 정보 가져온다.
+
+### Returns
+{: .no_toc }
+
+[`ContentsSelection`](/misc#contentsselection) \| `null`
+
+현재 선택된 텍스트에 대한 정보. 선택된 텍스트가 없는 경우 `null`.
+
+## clearSelection()
+
+현재 선택된 텍스트 선택 해제
+
+---
+
+# 미디어 오버레이
+
+## playMediaOverlay(prevOrNext)
+
+이전 또는 다음 미디어 오버레이 요소를 재생한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type      | Description                         |
+| ------------ | --------- | ----------------------------------- |
+| `prevOrNext` | `1 | -1` | 이전 또는 다음 트랙 재생 |
+
+## playMediaOverlayFromRange(range)
+
+Range에 포함된 미디어 오버레이 요소를 재생한다. Range에 미디어 오버레이 요소가 포함되어 있지 않으면 아무런 동작도 하지 않는다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type    | Description                 |
+| ------- | ------- | --------------------------- |
+| `range` | `Range` |  |
+
+## pauseMediaOverlay()
+
+미디어 오버레이 재생을 중지한다.
+
+## isPlayingMediaOverlay()
+
+현재 미디어 오버레이가 재생중인지 여부를 가져온다.
+
+## setMediaOverlayPlaybackRate(value)
+
+미디어 오버레이 재생 배속을 설정한다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `value` | `number` | 배속 값     |
+
+## canPlayMediaOverlayFromRange(range)
+
+`range`를 이용해 미디어 오버레이를 재생할 수 있는지 여부를 가져온다(`range`와 겹치는 미디어 오버레이 요소가 있는지 체크). `true`이면 해당 `range`를 `playMediaOverlayFromRange`에 파라미터로 넘겨 미디어 오버레이를 재생할 수 있다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| `range` | `Range` |             |
+
+### Returns
+{: .no_toc }
+
+`boolean`
