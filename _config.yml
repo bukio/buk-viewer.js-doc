@@ -22,8 +22,8 @@ title: buk-viewer.js
 email: contact@buk.io
 description: >- # this means to ignore newlines until "baseurl:"
   북이오 콘텐츠 뷰어 자바스크립트 라이브러리 API 문서
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/buk-viewer.js-doc" # the subpath of your site, e.g. /blog
+url: "https://bukio.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: bukio
 
 # Build settings
