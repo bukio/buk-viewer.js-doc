@@ -23,3 +23,16 @@ nav_order: 9
     <li><a href="georgia.xhtml#page753">753</a></li> <!-- O -->
     ...
 ```
+
+## `buk-viewer` 요소 타입 정의
+
+```typescript
+import { NgElement, WithProperties } from '@angular/elements'; // 설치 필요
+import { BukViewer } from 'buk-viewer';
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'buk-viewer': NgElement & WithProperties<BukViewer>;
+  }
+}
+```
