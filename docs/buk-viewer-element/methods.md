@@ -42,7 +42,7 @@ nav_order: 1
 
 # 책 로드 및 페이지 이동
 
-## openBook(bid, iid?, pageOrAnchor?, query?)
+## openBook(bid, iid?, anchor?, query?)
 
 책을 로드하거나 지정한 페이지로 이동한다.
 
@@ -53,7 +53,7 @@ nav_order: 1
 | -------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | `bid`          | `string`                 | 책 아이디                                                                                                  |
 | `iid`          | `string`                 | 아이템 아이디                                                                                   |
-| `pageOrAnchor` | `string | number`       | 아이템 내 위치<br /><br />- 진행률 `0\.\d+`<br />- 하이라이트 범위 `\d+-\d+`<br />- 요소 아이디 |
+| `anchor` | `string | number`       | 아이템 내 위치<br /><br />- 페이지 `0\.\d+`<br />- 텍스트 범위 `\d+-\d+`<br />- 요소 아이디 |
 | `query`        | `{ [key: string]: any }` | 페이지 표시에 필요한 기타 파라미터<br>[Address](/address#query-parameters) 참고                           |
 
 ## openBookWithURL(url)
@@ -153,6 +153,18 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | Name         | Type      | Description                                                                                                      |
 | ------------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
 | `value`      | `number`  | `isAbsolute`가 `false`일 경우 두 가지 값 `축소: -1, 확대: 1`<br/>`isAbsolute`가 `true`일 경우 퍼센트 값 `50~500` |
+| `isAbsolute` | `boolean` |                                                                                                       |
+
+## changeLineHeight(value, isAbsolute?)
+
+줄 간격을 변경한다.
+
+### Parameters
+{: .no_toc }
+
+| Name         | Type      | Description                                                                                                      |
+| ------------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
+| `value`      | `number`  | `isAbsolute`가 `false`일 경우 두 가지 값 `좁게: -1, 넓게: 1`<br/>`isAbsolute`가 `true`일 경우 퍼센트 값 `50~150` |
 | `isAbsolute` | `boolean` |                                                                                                       |
 
 ## changePagingMode(pagingMode)

@@ -23,13 +23,19 @@ Class
 | -------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- |
 | `bid`    | `string`                                              | 책 아이디                                                                        |
 | `iid`    | `string | undefined`                                 | 아이템 아이디                                                                    |
-| `page`   | `number | undefined`                                 | 아이템 내 진행률 (0~1)                                                           |
-| `anchor` | `string | undefined`                                 | 아이템 내 특정 요소 위치 (하이라이트 범위, 요소 아이디 등)                       |
+| `anchor` | `number | string | undefined`                                 | 아이템 내 위치 (페이지, 범위, 요소 아이디 셋 중 하나로 나타냄)                       |
+| `page` | `number | undefined`                                 | 아이템 내 페이지                       |
+| `range` | `string | undefined`                                 | 아이템 내 텍스트 범위                       |
+| `fragment` | `string | undefined`                                 | 아이템 내 요소 아이디                       |
 | `query`  | `{ [key: string]: string | undefined } | undefined` | 페이지 표시에 필요한 기타 파라미터 <br>[사용 가능한 파라미터](#query-parameters) |
+
+### Constructor
+
+### new Address(bid, iid?, anchor?, query?)
 
 ### Methods
 
-### Address.clone()
+### clone()
 
 현재 인스턴스를 복제하여 새로운 Address 인스턴스 반환
 
@@ -37,7 +43,7 @@ Class
 
 `Address`
 
-### Address.toString()
+### toString()
 
 Address를 북이오 콘텐츠 주소 체계를 따르는 URL로 변환
 
