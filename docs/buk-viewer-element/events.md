@@ -227,7 +227,7 @@ buk.json 로드 실패 시 발생
 
 | Name         | Type                                                      | Description                        |
 | ------------ | --------------------------------------------------------- | ---------------------------------- |
-| `rect`       | `{ x: number; y: number; width: number; height: number }` | 뷰어 내에서 하이라이트의 위치 정보 |
+| `rect`       | [`Rect`]({{ "/misc#rect" | prepend: site.baseurl }}) | 뷰어 내에서 하이라이트의 위치 정보 |
 | `range`      | `Range`                                                   | 하이라이트의 Range                 |
 | `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }})                           | 하이라이트의 Annotation            |
 | `offsetX`    | `number`                                                  | 뷰어 내에서 클릭의 X 좌표          |
