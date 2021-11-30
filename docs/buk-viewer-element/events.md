@@ -72,7 +72,7 @@ buk.json 로드 실패 시 발생
 
 | Name      | Type                      | Description |
 | --------- | ------------------------- | ----------- |
-| `address` | [`Address`](/address#address-1) | 현재 주소   |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 현재 주소   |
 
 ## itemLoad
 
@@ -86,7 +86,7 @@ buk.json 로드 실패 시 발생
 
 | Name      | Type                      | Description |
 | --------- | ------------------------- | ----------- |
-| `address` | [`Address`](/address#address-1) | 현재 주소   |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 현재 주소   |
 
 ## itemLoadError
 
@@ -100,7 +100,7 @@ buk.json 로드 실패 시 발생
 
 | Name      | Type                                      | Description |
 | --------- | ----------------------------------------- | ----------- |
-| `address` | [`Address`](/address#address-1)                 | 현재 주소   |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }})                 | 현재 주소   |
 | `code`    | [`ItemLoadErrorCode`](#itemloaderrorcode) | 에러 코드   |
 | `raw`     | `any` (optional)                          |             |
 
@@ -134,7 +134,7 @@ buk.json 로드 실패 시 발생
 
 | Name      | Type                      | Description |
 | --------- | ------------------------- | ----------- |
-| `address` | [`Address`](/address#address-1) | 새로운 주소 |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 새로운 주소 |
 
 ## settingsChange
 
@@ -148,7 +148,7 @@ buk.json 로드 실패 시 발생
 
 | Name       | Type                        | Description         |
 | ---------- | --------------------------- | ------------------- |
-| `settings` | [`Settings`](/settings#settings-1) | 변경된 Settings |
+| `settings` | [`Settings`]({{ "/settings#settings-1" | prepend: site.baseurl }}) | 변경된 Settings |
 
 ## pageInfoChange
 
@@ -212,7 +212,7 @@ buk.json 로드 실패 시 발생
 
 | Name        | Type                | Description                            |
 | ----------- | ------------------- | -------------------------------------- | ------------------------------------------------------------- |
-| `selection` | [`ContentsSelection | null`](/misc#contentsselection) | 현재 선택된 텍스트에 대한 정보, 선택된 텍스트가 없으면 `null` |
+| `selection` | `ContentsSelection | null` | 현재 선택된 텍스트에 대한 정보, 선택된 텍스트가 없으면 `null` |
 | `doc`       | `Document`          | 변경이 발생한 Document                 |
 
 ## highlightClick
@@ -229,7 +229,7 @@ buk.json 로드 실패 시 발생
 | ------------ | --------------------------------------------------------- | ---------------------------------- |
 | `rect`       | `{ x: number; y: number; width: number; height: number }` | 뷰어 내에서 하이라이트의 위치 정보 |
 | `range`      | `Range`                                                   | 하이라이트의 Range                 |
-| `annotation` | [`Annotation`](/annotation#annotation-1)                           | 하이라이트의 Annotation            |
+| `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }})                           | 하이라이트의 Annotation            |
 | `offsetX`    | `number`                                                  | 뷰어 내에서 클릭의 X 좌표          |
 | `offsetY`    | `number`                                                  | 뷰어 내에서 클릭의 Y 좌표          |
 
@@ -249,8 +249,8 @@ buk.json 로드 실패 시 발생
 
 | Name                | Type                              | Description            |
 | ------------------- | --------------------------------- | ---------------------- |
-| `annotation`        | [`Annotation`](/annotation#annotation-1)   | 생성된 어노테이션      |
-| `mergedAnnotations` | [`Annotation[]`](/annotation#annotation-1) | 머지된 어노테이션 목록 |
+| `annotation`        | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }})   | 생성된 어노테이션      |
+| `mergedAnnotations` | [`Annotation[]`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 머지된 어노테이션 목록 |
 
 ## annotationChanged
 
@@ -264,7 +264,7 @@ buk.json 로드 실패 시 발생
 
 | Name         | Type                            | Description                        |
 | ------------ | ------------------------------- | ---------------------------------- |
-| `annotation` | [`Annotation`](/annotation#annotation-1) | 변경된 어노테이션 (변경 후 데이터) |
+| `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 변경된 어노테이션 (변경 후 데이터) |
 
 ## annotationRemoved
 
@@ -278,7 +278,7 @@ buk.json 로드 실패 시 발생
 
 | Name          | Type                              | Description            |
 | ------------- | --------------------------------- | ---------------------- |
-| `annotations` | [`Annotation[]`](/annotation#annotation-1) | 삭제된 어노테이션 목록 |
+| `annotations` | [`Annotation[]`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 삭제된 어노테이션 목록 |
 
 ---
 

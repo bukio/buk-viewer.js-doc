@@ -31,12 +31,12 @@ nav_order: 1
 
 | Name     | Type                      | Description |
 | -------- | ------------------------- | ----------- |
-| `config` | [`LibConfig`](/libconfig#libconfig-1) | 초기화 옵션           |
+| `config` | [`LibConfig`]({{ "/libconfig#libconfig-1" | prepend: site.baseurl }}) | 초기화 옵션           |
 
 ### Returns
 {: .no_toc }
 
-[`LibConfig`](/libconfig#libconfig-1)
+[`LibConfig`]({{ "/libconfig#libconfig-1" | prepend: site.baseurl }})
 
 ---
 
@@ -54,7 +54,7 @@ nav_order: 1
 | `bid`          | `string`                 | 책 아이디                                                                                                  |
 | `iid`          | `string`                 | 아이템 아이디                                                                                   |
 | `anchor` | `string | number`       | 아이템 내 위치<br /><br />- 페이지 `0\.\d+`<br />- 텍스트 범위 `\d+-\d+`<br />- 요소 아이디 |
-| `query`        | `{ [key: string]: any }` | 페이지 표시에 필요한 기타 파라미터<br>[Address](/address#query-parameters) 참고                           |
+| `query`        | `{ [key: string]: any }` | 페이지 표시에 필요한 기타 파라미터<br>[Address]({{ "/address#query-parameters" | prepend: site.baseurl }}) 참고                           |
 
 ## openBookWithURL(url)
 
@@ -106,7 +106,7 @@ EPUB의 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-n
 ### Returns
 {: .no_toc }
 
-[`Settings`](/settings#settings-1)
+[`Settings`]({{ "/settings#settings-1" | prepend: site.baseurl }})
 
 ## getFontsCurrentlyAvailable()
 
@@ -130,7 +130,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 | Name    | Type                           | Description |
 | ------- | ------------------------------ | ----------- |
-| `theme` | [`Theme`](/settings#theme) |             |
+| `theme` | [`Theme`]({{ "/settings#theme" | prepend: site.baseurl }}) |             |
 
 ## changeFontFace(fontFace)
 
@@ -176,7 +176,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 | Name         | Type                                     | Description |
 | ------------ | ---------------------------------------- | ----------- |
-| `pagingMode` | [`PagingMode`](/settings#pagingmode) |             |
+| `pagingMode` | [`PagingMode`]({{ "/settings#pagingmode" | prepend: site.baseurl }}) |             |
 
 ## setPageAnimation(isActive)
 
@@ -247,11 +247,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 | Name          | Type                              | Description |
 | ------------- | --------------------------------- | ----------- |
-| `annotations` | [`Annotation[]`](/annotation#annotation-1) |             |
+| `annotations` | [`Annotation[]`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) |             |
 
 ## toggleBookmark()
 
-북마크를 토글한다. 기존 북마크 상태에 따라 [`annotationCreated`](/events#annotationcreated), [`annotationRemoved`](/events#annotationremoved) 이벤트가 발생한다.
+북마크를 토글한다. 기존 북마크 상태에 따라 [`annotationCreated`]({{ "/events#annotationcreated" | prepend: site.baseurl }}), [`annotationRemoved`]({{ "/events#annotationremoved" | prepend: site.baseurl }}) 이벤트가 발생한다.
 
 ## getHighlightsFromRange(range)
 
@@ -273,7 +273,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 ## createHighlight(range, styleClass, options?)
 
-`range`에 하이라이트를 생성하며, [`annotationCreated`](/events#annotationcreated) 이벤트가 발생한다.
+`range`에 하이라이트를 생성하며, [`annotationCreated`]({{ "/events#annotationcreated" | prepend: site.baseurl }}) 이벤트가 발생한다.
 
 ### Parameters
 {: .no_toc }
@@ -293,7 +293,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 ## changeHighlight(range, styleClass)
 
-`range`에 해당하는 하이라이트의 스타일 클래스를 변경하며, [`annotationChanged`](/events#annotationchanged) 이벤트가 발생한다.
+`range`에 해당하는 하이라이트의 스타일 클래스를 변경하며, [`annotationChanged`]({{ "/events#annotationchanged" | prepend: site.baseurl }}) 이벤트가 발생한다.
 
 ### Parameters
 {: .no_toc }
@@ -306,13 +306,13 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 ### Returns
 {: .no_toc }
 
-[`Annotation`](/annotation#annotation-1) \| `null`
+[`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) \| `null`
 
 변경된 어노테이션 (변경 후 데이터). `range`에 해당하는 하이라이트가 없거나 변경 실패 시 `null`.
 
 ## removeHighlight(range)
 
-`range`에 해당하는 하이라이트를 삭제하며, [`annotationRemoved`](/events#annotationremoved) 이벤트가 발생한다.
+`range`에 해당하는 하이라이트를 삭제하며, [`annotationRemoved`]({{ "/events#annotationremoved" | prepend: site.baseurl }}) 이벤트가 발생한다.
 
 ### Parameters
 {: .no_toc }
@@ -324,7 +324,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 ### Returns
 {: .no_toc }
 
-[`Annotation`](/annotation#annotation-1) \| `null`
+[`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) \| `null`
 
 삭제된 어노테이션. `range`에 해당하는 하이라이트가 없거나 삭제 실패 시 `null`.
 
@@ -342,7 +342,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 ### Returns
 {: .no_toc }
 
-[`ContentsSelection`](/misc#contentsselection) \| `null`
+[`ContentsSelection`]({{ "/misc#contentsselection" | prepend: site.baseurl }}) \| `null`
 
 현재 선택된 텍스트에 대한 정보. 선택된 텍스트가 없는 경우 `null`.
 
