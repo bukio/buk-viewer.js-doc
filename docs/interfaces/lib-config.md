@@ -59,6 +59,7 @@ Interface
 | `theme`                   | [`Theme`]({{ "/settings#theme" | prepend: site.baseurl }})           | 테마                                 |
 | `fontFace`                | `string`                                 | 폰트                                 |
 | `fontSize`                | `number`                                 | 폰트 사이즈                          |
+| `lineHeight`              | `number`                                 | 줄 간격                          |
 | `pagingMode`              | [`PagingMode`]({{ "/settings#pagingmode" | prepend: site.baseurl }}) | 페이지/스크롤 모드     |
 | `pageAnimation`           | `boolean`                                | 페이지 넘김 애니메이션               |
 | `multiColumn`             | `boolean`                                | 한 페이지/두 페이지 보기       |

@@ -38,6 +38,7 @@ Type Alias
 | `theme`                   | `Setting<Theme>`      | 테마 |
 | `fontFace`                | `Setting<string>`     | 폰트 |
 | `fontSize`                | `Setting<number>`     | 폰트 사이즈 |
+| `lineHeight`              | `Setting<number>`     | 줄 간격 |
 | `pagingMode`              | `Setting<PagingMode>` | 페이지/스크롤 모드 |
 | `pageAnimation`           | `Setting<boolean>`    | 페이지 넘김 애니메이션 |
 | `multiColumn`             | `Setting<boolean>`    | 한 페이지/두 페이지 보기 |
