@@ -304,3 +304,13 @@ buk.json 로드 실패 시 발생
 ## pageChangeBlocked
 
 미리보기 모드에서 볼 수 없는 페이지로 이동하려고 할 때 발생
+
+### PageChangeBlockedEvent
+{: .no_toc }
+
+##### Properties
+{: .no_toc }
+
+| Name | Type | Description |
+| - | - | - |
+| `direction` | [`Direction`]({{ "/enums#direction" | prepend: site.baseurl }}) | 유저가 이동하려고 했던 방향 |
