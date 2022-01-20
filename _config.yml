@@ -25,9 +25,13 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/buk-viewer.js-doc" # the subpath of your site, e.g. /blog
 url: "https://bukio.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: bukio
+aux_links:
+  "View on Github":
+    - "https://github.com/bukio/buk-viewer.js-doc"
+nav_footer: "Current Version: 1.3.0"
 
 # Build settings
-remote_theme: pmarsceill/just-the-docs
+remote_theme: bukio/just-the-docs
 color_scheme: buk
 plugins:
   - jekyll-feed
