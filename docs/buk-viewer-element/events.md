@@ -167,6 +167,7 @@ buk.json 로드 실패 시 발생
 | `totalPrintPageCount`  | `number | null` | 종이책 전체 페이지 수                                  |
 | `currentPrintPages`    | `number[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
 | `isOutOfPreviewBounds` | `boolean`        | 현재 보여지는 페이지가 미리보기 범위를 초과했는지 여부 |
+| `tocIndex` | `number` | 현재 보여지는 페이지에 해당하는 목차의 인덱스, 해당하는 목차가 없는 경우 -1 |
 
 ## bookmarkStateChange
 
@@ -301,7 +302,37 @@ buk.json 로드 실패 시 발생
 | `offsetY`             | `number`      | 뷰어 내에서 탭의 Y 좌표                                                        |
 | `isPageChangeGesture` | `boolean`     | 현재 탭에 의해 페이지 이동이 일어날 수 있는지 (페이지 좌, 우 영역을 탭한 경우) |
 
+## pageChangeCanceled
+
+이전, 다음 페이지로 이동하려고 할 때 [`PageChangeCancelCode`](#pagechangecancelcode)에 의해 이동이 취소된 경우 발생
+
+### PageChangeCanceledEvent
+{: .no_toc }
+
+##### Properties
+{: .no_toc }
+
+| Name | Type | Description |
+| - | - | - |
+| `direction` | [`Direction`]({{ "/enums#direction" | prepend: site.baseurl }}) | 이동하려고 했던 방향 |
+| `code` | [`PageChangeCancelCode`](#pagechangecancelcode) | 취소 사유 |
+
+### PageChangeCancelCode
+{: .no_toc }
+
+##### Constants
+{: .no_toc }
+
+| Name      | Value | Description          |
+| --------- | ----- | -------------------- |
+| `OutOfPreviewBounds` | `0`   | 미리보기 모드에서 볼 수 없는 페이지로 이동 |
+| `NoNextItem` | `1`   | 다음 아이템이 없음 (책의 시작 또는 끝에서 발생)        |
+
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## pageChangeBlocked
+{: .mt-2 }
 
 미리보기 모드에서 볼 수 없는 페이지로 이동하려고 할 때 발생
 

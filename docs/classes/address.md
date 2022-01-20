@@ -87,3 +87,12 @@ Viewer.openBookWithURL('/bid/iid/1-10?highlight=ff0');
 ```javascript
 Viewer.openBookWithURL('/bid/iid/1-10?preview=1&highlight=yellow');
 ```
+
+## force
+
+현재 주소와 상관 없이 무조건 책을 새로 연다. (buk.json을 새로 불러온다)
+
+| Value    | Description                                              |
+| -------- | -------------------------------------------------------- |
+| `true` | |
+
