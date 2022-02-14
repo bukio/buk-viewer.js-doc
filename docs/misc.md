@@ -2,7 +2,6 @@
 layout: default
 title: Miscellaneous
 permalink: /misc
-parent: Interfaces
 nav_order: 8
 ---
 
@@ -49,3 +48,15 @@ Interface
 | `y`  | `number` | y 좌표 |
 | `width`  | `number` | 너비 |
 | `height`  | `number` | 높이 |
+
+
+Enum
+{: .label .m-0 .mt-6 }
+
+## Direction
+{: .mt-2 }
+
+| Name | Value | Description |
+| - | - | - |
+| `Prev` | `-1` | 이전 |
+| `Next` | `1` | 다음 |

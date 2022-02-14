@@ -2,7 +2,6 @@
 layout: default
 title: LibConfig
 permalink: /libconfig
-parent: Interfaces
 nav_order: 3
 ---
 

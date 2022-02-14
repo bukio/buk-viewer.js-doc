@@ -2,7 +2,6 @@
 layout: default
 title: BukJSON
 permalink: /bukjson
-parent: Interfaces
 nav_order: 4
 ---
 

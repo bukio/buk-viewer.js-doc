@@ -2,7 +2,6 @@
 layout: default
 title: Address
 permalink: /address
-parent: Classes
 nav_order: 6
 ---
 

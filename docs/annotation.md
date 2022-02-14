@@ -2,7 +2,6 @@
 layout: default
 title: Annotation
 permalink: /annotation
-parent: Interfaces
 nav_order: 7
 ---
 

@@ -314,7 +314,7 @@ buk.json 로드 실패 시 발생
 
 | Name | Type | Description |
 | - | - | - |
-| `direction` | [`Direction`]({{ "/enums#direction" | prepend: site.baseurl }}) | 이동하려고 했던 방향 |
+| `direction` | [`Direction`]({{ "/misc#direction" | prepend: site.baseurl }}) | 이동하려고 했던 방향 |
 | `code` | [`PageChangeCancelCode`](#pagechangecancelcode) | 취소 사유 |
 
 ### PageChangeCancelCode
@@ -344,4 +344,4 @@ Deprecated
 
 | Name | Type | Description |
 | - | - | - |
-| `direction` | [`Direction`]({{ "/enums#direction" | prepend: site.baseurl }}) | 유저가 이동하려고 했던 방향 |
+| `direction` | [`Direction`]({{ "/misc#direction" | prepend: site.baseurl }}) | 유저가 이동하려고 했던 방향 |

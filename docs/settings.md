@@ -2,7 +2,6 @@
 layout: default
 title: Settings
 permalink: /settings
-parent: Interfaces
 nav_order: 5
 ---
 
