@@ -332,7 +332,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 변경된 어노테이션 (변경 후 데이터). 화면에 표시중인 페이지 내에 `rangeURL`에 해당하는 하이라이트가 없거나 변경 실패 시 `null`.
 
-## removeHighlight(range)
+## removeHighlight(rangeURL, styleClass, options?)
 
 하이라이트를 삭제한다.
 
