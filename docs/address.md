@@ -70,23 +70,6 @@ Viewer.openBookWithURL('/bid/iid/1-10?highlight=yellow');
 Viewer.openBookWithURL('/bid/iid/1-10?highlight=ff0');
 ```
 
-## preview
-
-이동하려는 주소가 하이라이트 범위면 해당 범위를 기준으로 미리보기 모드 시작.
-
-| Value    | Description                                              |
-| -------- | -------------------------------------------------------- |
-| `number` | 하이라이트를 기준으로 좌, 우로 더 볼 수 있는 페이지의 수 |
-
-\- **유저**가 정해진 범위 이상으로 페이지 넘기는 것을 방지하는 모드로, 뷰어 조작에 따라 미리보기 불가한 콘텐츠가 노출될 수도 있음 (`pageInfoChange` 이벤트에서 `isOutOfPreviewBounds`값 체크하여 노출 막는 처리 필요)  
-\- 정해진 범위 이상으로 페이지를 넘기려고 하면 `pageChangeBlocked` 이벤트 발생  
-\- 미리보기 모드는 다른 책을 열기 전까지 유지됨
-{: .bg-grey-lt-100 .p-3 }
-
-```javascript
-Viewer.openBookWithURL('/bid/iid/1-10?preview=1&highlight=yellow');
-```
-
 ## force
 
 현재 주소와 상관 없이 무조건 책을 새로 연다. (buk.json을 새로 불러온다)

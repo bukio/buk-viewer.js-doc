@@ -17,14 +17,15 @@ Interface
 
 ### Properties
 
-| Name                | Type                                                     | Description                                                       |
-| ------------------- | -------------------------------------------------------- | ----------------------------------------------------------------- |
-| `contentsBaseURL`   | `string`                                                 | 아이템 로드 및 아이템 내 리소스 요청시 사용할 주소를 설정         |
-| `bukJSONBaseURL`    | `string | undefined`                                      | buk.json 요청시 사용할 주소를 설정, 없으면 `contentsBaseURL` 사용 |
-| `fonts`             | [`FontConfig`](#fontconfig)`| undefined`                   | 뷰어에서 지원할 폰트                                                          |
-| `highlightStyles`   | [`HighlightStyle[]`](#highlightstyle)`| undefined`         | 하이라이트 스타일                                            |
-| `initialSettings`   | [`SettingValues`](#settingvalues)`| undefined`             | 읽기 설정 초기값                                                  |
-| `updateHTTPRequest` | [`UpdateHTTPRequestFn`](#updatehttprequestfn)`| undefined` | 뷰어에서 일어나는 요청을 수정하는 함수                            |
+| Name | Type | Description |
+| - | - | - |
+| `contentsBaseURL` | `string` | 아이템 로드 및 아이템 내 리소스 요청시 사용할 주소를 설정 |
+| `bukJSONBaseURL` | `string | undefined` | buk.json 요청시 사용할 주소를 설정, 없으면 `contentsBaseURL` 사용 |
+| `fonts` | [`FontConfig`](#fontconfig)`| undefined` | 뷰어에서 지원할 폰트 |
+| `highlightStyles` | [`HighlightStyle[]`](#highlightstyle)`| undefined` | 하이라이트 스타일 |
+| `initialSettings` | [`SettingValues`](#settingvalues)`| undefined` | 읽기 설정 초기값 |
+| `updateHTTPRequest` | [`UpdateHTTPRequestFn`](#updatehttprequestfn)`| undefined` | 뷰어에서 일어나는 요청을 수정하는 함수 |
+| `canChangeAddress` | [`CanChangeAddressFn`](#canchangeaddressfn)`| undefined` | 새로운 주소로 변경되기 전 호출되는 함수. 리턴값으로 뷰어의 주소 변경 동작을 제어할 수 있음. |
 
 
 Interface
@@ -102,4 +103,16 @@ Type Alias
   setParams?: { [param: string]: string }; // 추가 파라미터
   setHeaders?: { [name: string]: string }; // 추가 헤더
 };
+```
+
+Type Alias
+{: .label .m-0 .mt-6 }
+
+## CanChangeAddressFn
+{: .mt-2 }
+
+새로운 주소로 변경되기 전 호출되는 함수. 리턴값으로 뷰어의 주소 변경 동작을 제어할 수 있음.
+
+```typescript
+(newAddress: Address) => boolean; // true: 주소 변경을 계속한다, false: 주소 변경을 중단한다
 ```

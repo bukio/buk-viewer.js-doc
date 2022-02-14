@@ -84,7 +84,27 @@ EPUB의 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-n
 
 | Name   | Type     | Description          |
 | ------ | -------- | -------------------- |
-| `page` | `number` | 이동할 종이책 페이지 |
+| `page` | `number` | 이동할 종이책 페이지 |
+
+---
+
+# 주소 파싱
+
+## parseBukURL(url)
+
+북이오 콘텐츠 주소 체계를 따르는 URL을 파싱하여 Address 객체를 리턴한다.
+
+### Parameters
+{: .no_toc }
+
+| Name   | Type | Description |
+| - | - | - |
+| `url` | `string` | 북이오 콘텐츠 주소 체계를 따르는 URL |
+
+### Returns
+{: .no_toc }
+
+[`Address`]({{ "/address#address-1" | prepend: site.baseurl }})
 
 ---
 
@@ -273,16 +293,16 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 ## createHighlight(range, styleClass, options?)
 
-`range`에 하이라이트를 생성하며, [`annotationCreated`]({{ "/events#annotationcreated" | prepend: site.baseurl }}) 이벤트가 발생한다.
+`range`에 하이라이트를 생성한다.
 
 ### Parameters
 {: .no_toc }
 
-| Name         | Type                                        | Description                                                                                                                                                         |
-| ------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `range`      | `Range`                                     | 하이라이트할 Range                                                                                                                                                  |
-| `styleClass` | `string`                                    | 하이라이트 스타일 클래스 이름                                                                                                                                       |
-| `options`    | `{ expandToWord: boolean; merge: boolean }` | 하이라이트 동작 옵션<br>- expandToWord: `range`를 단어 단위까지 확장하여 하이라이트 (기본값: `true`)<br>- merge: 겹치는 하이라이트 머지 (기본값: `true`) |
+| Name | Type | Description |
+| - | - | - |
+| `range` | `Range | string` | 하이라이트할 Range 또는 범위 URL |
+| `styleClass` | `string` | 하이라이트 스타일 클래스 |
+| `options` | `{ expandToWord?: boolean; mergeWith?: string[], emitEvent?: boolean }` | 하이라이트 동작 옵션<br>- expandToWord: `range`를 단어 단위까지 확장하여 하이라이트 (기본값: `true`)<br>- mergeWith: 머지할 겹치는 하이라이트의 스타일 클래스 (기본값: `[]`)<br>- emitEvent: 'annotationCreated' 이벤트 발생 여부 (기본값: `true`) |
 
 ### Returns
 {: .no_toc }
@@ -291,35 +311,39 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 하이라이트를 통해 생성된 어노테이션, 머지된 어노테이션 목록. 하이라이트 실패 시 `null`.
 
-## changeHighlight(range, styleClass)
+## changeHighlight(rangeURL, currStyleClass, newStyleClass, options?)
 
-`range`에 해당하는 하이라이트의 스타일 클래스를 변경하며, [`annotationChanged`]({{ "/events#annotationchanged" | prepend: site.baseurl }}) 이벤트가 발생한다.
+하이라이트의 스타일을 변경한다.
 
 ### Parameters
 {: .no_toc }
 
-| Name         | Type     | Description                   |
-| ------------ | -------- | ----------------------------- |
-| `range`      | `Range`  | 변경할 하이라이트의 Range                  |
-| `styleClass` | `string` | LibConfig에 지정한 스타일 클래스 이름 |
+| Name | Type | Description |
+| - | - | - |
+| `rangeURL` | `string` | 변경할 하이라이트의 URL |
+| `currStyleClass` | `string` | 변경할 하이라이트의 스타일 클래스 |
+| `newStyleClass` | `string` | 새로운 스타일 클래스 |
+| `options` | `{ emitEvemt?: boolean }` | 하이라이트 동작 옵션<br>- emitEvent: 'annotationChanged' 이벤트 발생 여부 (기본값: `true`) |
 
 ### Returns
 {: .no_toc }
 
 [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) \| `null`
 
-변경된 어노테이션 (변경 후 데이터). `range`에 해당하는 하이라이트가 없거나 변경 실패 시 `null`.
+변경된 어노테이션 (변경 후 데이터). 화면에 표시중인 페이지 내에 `rangeURL`에 해당하는 하이라이트가 없거나 변경 실패 시 `null`.
 
 ## removeHighlight(range)
 
-`range`에 해당하는 하이라이트를 삭제하며, [`annotationRemoved`]({{ "/events#annotationremoved" | prepend: site.baseurl }}) 이벤트가 발생한다.
+하이라이트를 삭제한다.
 
 ### Parameters
 {: .no_toc }
 
-| Name    | Type    | Description  |
+| Name | Type | Description |
 | ------- | ------- | ------------ |
-| `range` | `Range` | 삭제할 하이라이트의 Range |
+| `rangeURL` | `string` | 삭제할 하이라이트의 URL |
+| `styleClass` | `string` | 삭제할 하이라이트의 스타일 클래스 |
+| `options` | `{ emitEvemt?: boolean }` | 하이라이트 동작 옵션<br>- emitEvent: 'annotationRemoved' 이벤트 발생 여부 (기본값: `true`) |
 
 ### Returns
 {: .no_toc }
@@ -330,7 +354,7 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 &nbsp;
 
-⚠️ `toggleBookmark`, `createHighlight`, `changeHighlight`, `removeHighlight`는 페이지에 북마크 및 하이라이트를 **표시**하고 결과를 담은 이벤트를 발생시키는 역할을 하며, `setAnnotations`를 통해 전달받은 Annotation 목록은 업데이트**하지 않는다**. 따라서 발생하는 이벤트에 따라 뷰어 바깥에서 가지고 있는 Annotation 목록을 업데이트 해준 후 업데이트 된 목록을 다시 `setAnnotation`을 통하여 뷰어에 전달해주어야 한다.
+⚠️ `toggleBookmark`, `createHighlight`, `changeHighlight`, `removeHighlight`는 페이지에 북마크 및 하이라이트를 **표시**하며, `setAnnotations`를 통해 전달받은 Annotation 목록은 업데이트**하지 않는다**. 해당 목록에 포함되어 있지 않은 Annotation은 아이템이 변경되면 페이지에서 삭제된다. 따라서 책을 보는동안 아이템 변경에 관계 없이 북마크 및 하이라이트를 유지하려면 위 메서드들에 의해 업데이트된 어노테이션 목록을 `setAnnotations`를 통해 뷰어에 전달해주어야 한다.
 {: .bg-yellow-000 .p-3 }
 
 ---

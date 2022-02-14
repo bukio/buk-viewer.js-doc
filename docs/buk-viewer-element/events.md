@@ -47,7 +47,7 @@ buk.json 로드 실패 시 발생
 | Name   | Type                                      | Description |
 | ------ | ----------------------------------------- | ----------- |
 | `code` | [`BookLoadErrorCode`](#bookloaderrorcode) | 에러 코드   |
-| `raw`  | `any` (optional)                          |             |
+| `raw`  | `any`                          |             |
 
 ### BookLoadErrorCode
 {: .no_toc }
@@ -84,9 +84,10 @@ buk.json 로드 실패 시 발생
 ##### Properties
 {: .no_toc }
 
-| Name      | Type                      | Description |
-| --------- | ------------------------- | ----------- |
-| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 현재 주소   |
+| Name | Type | Description |
+| - | - | - |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 현재 주소 |
+| `items` | [`BookItem[]`]({{ "/bukjson#bookitem" | prepend: site.baseurl }}) | 로드된 아이템 |
 
 ## itemLoadError
 
@@ -98,11 +99,12 @@ buk.json 로드 실패 시 발생
 ##### Properties
 {: .no_toc }
 
-| Name      | Type                                      | Description |
-| --------- | ----------------------------------------- | ----------- |
-| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }})                 | 현재 주소   |
-| `code`    | [`ItemLoadErrorCode`](#itemloaderrorcode) | 에러 코드   |
-| `raw`     | `any` (optional)                          |             |
+| Name | Type | Description |
+| - | - | - |
+| `address` | [`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) | 현재 주소 |
+| `item` | [`BookItem`]({{ "/bukjson#bookitem" | prepend: site.baseurl }})`| undefined` | 에러가 발생한 아이템 |
+| `code` | [`ItemLoadErrorCode`](#itemloaderrorcode) | 에러 코드 |
+| `raw` | `any` | |
 
 ### ItemLoadErrorCode
 {: .no_toc }
@@ -114,7 +116,7 @@ buk.json 로드 실패 시 발생
 | -------------------------- | ----- | ---------------------------------- |
 | `Unknown`                  | `0`   | 알 수 없는 에러 발생               |
 | `ItemNotFound`             | `1`   | 요청한 아이템이 존재하지 않음      |
-| `PermissionDenied`         | `2`   | 해당 아이템을 볼 수 있는 권한 없음 |
+| `PermissionDenied`         | `2`   | 해당 아이템을 볼 수 있는 권한 없음 (deprecated) |
 | `ContentsLoadFailed`       | `3`   | html 파일 로드 중 에러 발생        |
 | `ContentsProcessingFailed` | `4`   | 콘텐츠 처리 중 에러 발생           |
 
@@ -162,11 +164,10 @@ buk.json 로드 실패 시 발생
 
 | Name                   | Type             | Description                                            |
 | ---------------------- | ---------------- | ------------------------------------------------------ |
-| `totalPageCount`       | `number`         | 아이템 내 전체 페이지 수                               |
-| `currentPage`          | `number`         | 아이템 내 현재 페이지 번호                             |
-| `totalPrintPageCount`  | `number | null` | 종이책 전체 페이지 수                                  |
-| `currentPrintPages`    | `number[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
-| `isOutOfPreviewBounds` | `boolean`        | 현재 보여지는 페이지가 미리보기 범위를 초과했는지 여부 |
+| `pageCount`       | `number`         | 아이템 내 전체 페이지 수                               |
+| `page`          | `number`         | 아이템 내 현재 페이지 번호                             |
+| `printPageCount`  | `number | null` | 종이책 전체 페이지 수                                  |
+| `printPages`    | `number[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
 | `tocIndex` | `number` | 현재 보여지는 페이지에 해당하는 목차의 인덱스, 해당하는 목차가 없는 경우 -1 |
 
 ## bookmarkStateChange
@@ -226,13 +227,11 @@ buk.json 로드 실패 시 발생
 ##### Properties
 {: .no_toc }
 
-| Name         | Type                                                      | Description                        |
-| ------------ | --------------------------------------------------------- | ---------------------------------- |
-| `rect`       | [`Rect`]({{ "/misc#rect" | prepend: site.baseurl }}) | 뷰어 내에서 하이라이트의 위치 정보 |
-| `range`      | `Range`                                                   | 하이라이트의 Range                 |
-| `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }})                           | 하이라이트의 Annotation            |
-| `offsetX`    | `number`                                                  | 뷰어 내에서 클릭의 X 좌표          |
-| `offsetY`    | `number`                                                  | 뷰어 내에서 클릭의 Y 좌표          |
+| Name | Type | Description |
+| - | - | - |
+| `highlights` | `{ rect: Rect, range: Range, annotation: Annotation }[]` | 클릭된 요소들에 대한 정보 |
+| `offsetX` | `number` | 뷰어 내에서 클릭의 X 좌표 |
+| `offsetY` | `number` | 뷰어 내에서 클릭의 Y 좌표 |
 
 ---
 
@@ -325,23 +324,5 @@ buk.json 로드 실패 시 발생
 
 | Name      | Value | Description          |
 | --------- | ----- | -------------------- |
-| `OutOfPreviewBounds` | `0`   | 미리보기 모드에서 볼 수 없는 페이지로 이동 |
+| `OutOfPreviewBounds` | `0`   | 미리보기 모드에서 볼 수 없는 페이지로 이동 (deprecated) |
 | `NoNextItem` | `1`   | 다음 아이템이 없음 (책의 시작 또는 끝에서 발생)        |
-
-Deprecated
-{: .label .label-red .m-0 .mt-5 }
-
-## pageChangeBlocked
-{: .mt-2 }
-
-미리보기 모드에서 볼 수 없는 페이지로 이동하려고 할 때 발생
-
-### PageChangeBlockedEvent
-{: .no_toc }
-
-##### Properties
-{: .no_toc }
-
-| Name | Type | Description |
-| - | - | - |
-| `direction` | [`Direction`]({{ "/misc#direction" | prepend: site.baseurl }}) | 유저가 이동하려고 했던 방향 |
