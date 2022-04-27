@@ -141,7 +141,23 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 
 # 읽기 설정 변경
 
+## updateSettings(key, value)
+
+읽기 설정을 변경한다.
+
+### Parameters
+{: .no_toc }
+
+| Name | Type | Description |
+| - | - | - |
+| `key` | [`keyof Settings`]({{ "/settings#settings" | prepend: site.baseurl }}) | 변경할 설정 항목 |
+| `value` | `any` | 변경할 값 |
+
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## changeTheme(theme)
+{: .mt-2 }
 
 테마를 변경한다.
 
@@ -152,7 +168,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | ------- | ------------------------------ | ----------- |
 | `theme` | [`Theme`]({{ "/settings#theme" | prepend: site.baseurl }}) |             |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## changeFontFace(fontFace)
+{: .mt-2 }
 
 폰트를 변경한다.
 
@@ -163,7 +183,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | ---------- | -------- | ------------------------------------------------------------------ |
 | `fontFace` | `string` | `'default'` 또는 `LibConfig.fonts`에 정의된 `fontFamilies` 중 하나 |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## changeFontSize(value, isAbsolute?)
+{: .mt-2 }
 
 폰트 사이즈를 변경한다.
 
@@ -175,7 +199,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | `value`      | `number`  | `isAbsolute`가 `false`일 경우 두 가지 값 `축소: -1, 확대: 1`<br/>`isAbsolute`가 `true`일 경우 퍼센트 값 `50~500` |
 | `isAbsolute` | `boolean` |                                                                                                       |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## changeLineHeight(value, isAbsolute?)
+{: .mt-2 }
 
 줄 간격을 변경한다.
 
@@ -187,7 +215,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | `value`      | `number`  | `isAbsolute`가 `false`일 경우 두 가지 값 `좁게: -1, 넓게: 1`<br/>`isAbsolute`가 `true`일 경우 퍼센트 값 `50~150` |
 | `isAbsolute` | `boolean` |                                                                                                       |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## changePagingMode(pagingMode)
+{: .mt-2 }
 
 페이지/스크롤 모드를 설정한다. Reflowable 책에서만 동작한다.
 
@@ -198,7 +230,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | ------------ | ---------------------------------------- | ----------- |
 | `pagingMode` | [`PagingMode`]({{ "/settings#pagingmode" | prepend: site.baseurl }}) |             |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## setPageAnimation(isActive)
+{: .mt-2 }
 
 페이지 넘김 애니메이션을 사용할지 여부를 설정한다.
 
@@ -209,7 +245,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | ---------- | --------- | ----------- |
 | `isActive` | `boolean` |             |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## setMultiColumn(isActive)
+{: .mt-2 }
 
 한 페이지/두 페이지 보기 모드를 설정한다.
 
@@ -220,7 +260,11 @@ LibConfig에 명시된 폰트 중 현재 책에 적용 가능한 font-family 목
 | ---------- | --------- | ------------------------------------------------- |
 | `isActive` | `boolean` | `false` 한 페이지 보기<br />`true` 두 페이지 보기 |
 
+Deprecated
+{: .label .label-red .m-0 .mt-5 }
+
 ## setClickToPlayMediaOverlay(isActive)
+{: .mt-2 }
 
 미디어 오버레이 요소를 클릭하여 재생을 시작할 지 여부를 설정한다.
 
@@ -434,3 +478,21 @@ Range에 포함된 미디어 오버레이 요소를 재생한다. Range에 미�
 {: .no_toc }
 
 `boolean`
+
+---
+
+# 페이지 확대/축소
+
+## zoom(scale)
+
+페이지를 확대/축소 한다. EPUB3 Fixed Layout 및 PDF 책에서만 동작한다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `scale` | `number` | 확대/축소 스케일을 나타내는 퍼센트 값 |
+
+⚠️ 데스크탑 환경에 최적화하여 개발되었으며, 터치 디바이스에서는 브라우저 네이티브 핀치 줌 사용 권장.
+{: .bg-yellow-000 .p-3 }

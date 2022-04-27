@@ -281,6 +281,21 @@ buk.json 로드 실패 시 발생
 | `annotations` | [`Annotation[]`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 삭제된 어노테이션 목록 |
 
 ---
+# 페이지 확대/축소
+
+## zoomScaleChange
+
+### ZoomScaleChangeEvent
+{: .no_toc }
+
+##### Properties
+{: .no_toc }
+
+| Name | Type | Description |
+| - | - | - |
+| `scale` | `number` | 확대/축소 스케일을 나타내는 퍼센트 값 |
+
+---
 
 # 기타
 

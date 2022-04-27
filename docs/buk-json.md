@@ -79,6 +79,7 @@ Interface
 | ----- | -------- | --------------- |
 | `iid` | `string` | 아이템 아이디   |
 | `url` | `string` | 콘텐츠 파일 URL |
+| `thumbnail` | `string | undefined` | 썸네일 이미지 URL (책 타입이 PDF인 경우에만 존재) |
 
 
 Interface
