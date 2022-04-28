@@ -25,7 +25,7 @@ nav_order: 1
 
 ## 용어
 
-- 아이템: EPUB OPF의 spine에 속한 itemref (linear="no" 제외)
+- 아이템: 콘텐츠 파일 (EPUB의 경우 OPF의 spine에 속한 itemref에 해당, PDF의 경우 이미지 파일에 해당)
 - buk.json: 책 메타데이터, 목차, 아이템 정보를 포함하고 있는 파일
 - bid: 책 아이디
 - iid: 아이템 아이디
@@ -35,3 +35,13 @@ nav_order: 1
 > /`bid`(/`iid`(/`anchor`))
 
 - `anchor`: 아이템 내 위치를 나타내는 값. 페이지 `(0\.\d+)`, 텍스트 범위 `(\d+-\d+)`, 요소 아이디
+
+## 지원 브라우저
+
+- Chrome
+- Firefox
+- Safari
+- Edge
+- IE 11+
+- iOS 12+
+- Android

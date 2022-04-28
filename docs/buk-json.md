@@ -38,7 +38,7 @@ Interface
 | Name        | Type                                               | Description                                                |
 | ----------- | -------------------------------------------------- | ---------------------------------------------------------- |
 | `bid`       | `string`                                           | 책 아이디                                                  |
-| `type`      | [`BookType`](#booktype)                            | 책 타입<br>(현재 뷰어에선 `BookType.Buk` 타입의 책만 지원) |
+| `type`      | [`BookType`](#booktype)                            | 책 타입 |
 | `cover`     | `string`                                           | 커버 이미지 URL                                            |
 | `title`     | `string`                                           | 제목                                                       |
 | `subtitle`  | `string`                                           | 부제목                                                     |
