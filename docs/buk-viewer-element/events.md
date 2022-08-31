@@ -212,10 +212,10 @@ buk.json 로드 실패 시 발생
 ##### Properties
 {: .no_toc }
 
-| Name        | Type                | Description                            |
-| ----------- | ------------------- | -------------------------------------- | ------------------------------------------------------------- |
-| `selection` | `ContentsSelection | null` | 현재 선택된 텍스트에 대한 정보, 선택된 텍스트가 없으면 `null` |
-| `doc`       | `Document`          | 변경이 발생한 Document                 |
+| Name | Type | Description |
+| - | - | - |
+| `selection` | [`ContentsSelection`]({{ "/misc#contentsselection" | prepend: site.baseurl }})`| null` | 현재 선택된 텍스트에 대한 정보, 선택된 텍스트가 없으면 `null` |
+| `doc` | `Document` | 변경이 발생한 Document |
 
 ## highlightClick
 
@@ -229,7 +229,7 @@ buk.json 로드 실패 시 발생
 
 | Name | Type | Description |
 | - | - | - |
-| `highlights` | `{ rect: Rect, range: Range, annotation: Annotation }[]` | 클릭된 요소들에 대한 정보 |
+| `highlights` | `{ rect: Rect, rects: Rect[], range: Range, annotation: Annotation }[]` | 클릭된 하이라이트들에 대한 정보 |
 | `offsetX` | `number` | 뷰어 내에서 클릭의 X 좌표 |
 | `offsetY` | `number` | 뷰어 내에서 클릭의 Y 좌표 |
 
@@ -262,9 +262,10 @@ buk.json 로드 실패 시 발생
 ##### Properties
 {: .no_toc }
 
-| Name         | Type                            | Description                        |
-| ------------ | ------------------------------- | ---------------------------------- |
-| `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 변경된 어노테이션 (변경 후 데이터) |
+| Name | Type | Description |
+| - | - | - |
+| `annotation` | [`Annotation`]({{ "/annotation#annotation-1" | prepend: site.baseurl }}) | 변경된 어노테이션 |
+| `oldStyleClass` | `string` | 변경 전 어노테이션의 styleClass |
 
 ## annotationRemoved
 

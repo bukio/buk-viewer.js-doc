@@ -122,9 +122,10 @@ Enum
 ## BookType
 {: .mt-2 }
 
-| Name       | Value        | Description                             |
-| ---------- | ------------ | --------------------------------------- |
+| Name | Value | Description |
+| - | - | - |
 | `Buk`      | `'buk'`      | EPUB을 스트리밍 가능한 형태로 변환한 책 |
-| `PDF`      | `'pdf'`      | PDF를 스트리밍 가능한 형태로 변환한 책  |
-| `Document` | `'document'` | 단일 챕터로 이루어진 문서                                    |
-| `Wiki`     | `'wiki'`     | 위키피디아                              |
+| `PDF`      | `'pdf'`      | PDF를 스트리밍 가능한 형태로 변환한 책 |
+| `Document` | `'document'` | 단일 챕터로 이루어진 문서 |
+| `Wiki`     | `'wiki'`     | 위키피디아 |
+| `Edition`  | `'edition'`  | 에디션 |

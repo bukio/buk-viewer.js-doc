@@ -27,11 +27,12 @@ Interface
 
 현재 선택된 텍스트에 대한 정보
 
-| Name    | Type                                                      | Description                                                        |
-| ------- | --------------------------------------------------------- | ------------------------------------------------------------------ |
-| `rect`  | `Rect` | 뷰어 내에서 선택 영역의 Rect                                  |
-| `range` | `Range`                                                   | 선택된 Range                                                       |
-| `url`   | `string | null`                                          | 선택에 해당하는 URL, 북이오 주소 체계로 나타낼 수 없는 경우 `null` |
+| Name | Type | Description |
+| - | - | - |
+| `rect`  | `Rect` | 선택 영역의 모든 Rect들을 포함하는 뷰포트 상대적인 Rect |
+| `rects`  | `Rect[]` | 선택 영역의 모든 뷰포트 상대적인 Rect들 |
+| `range` | `Range` | 선택된 Range |
+| `url`   | `string | null` | 선택에 해당하는 URL, 북이오 주소 체계로 나타낼 수 없는 경우 `null` |
 
 
 Interface
