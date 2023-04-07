@@ -35,6 +35,18 @@ remote_theme: bukio/just-the-docs
 color_scheme: buk
 plugins:
   - jekyll-feed
+  
+# Just the Docs
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: yellow
+  deprecated:
+    title: Deprecated
+    color: red
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -161,6 +161,9 @@ Deprecated
 
 테마를 변경한다.
 
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
+
 ### Parameters
 {: .no_toc }
 
@@ -176,6 +179,9 @@ Deprecated
 
 폰트를 변경한다.
 
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
+
 ### Parameters
 {: .no_toc }
 
@@ -190,6 +196,9 @@ Deprecated
 {: .mt-2 }
 
 폰트 사이즈를 변경한다.
+
+{: .deprecated }
+updateSettings(key, value) 메서드 사용, 기존 메서드에서 `isAbsolute`를 `true`로 호출한 것과 같이 동작한다.
 
 ### Parameters
 {: .no_toc }
@@ -207,6 +216,9 @@ Deprecated
 
 줄 간격을 변경한다.
 
+{: .deprecated }
+updateSettings(key, value) 메서드 사용, 기존 메서드에서 `isAbsolute`를 `true`로 호출한 것과 같이 동작한다.
+
 ### Parameters
 {: .no_toc }
 
@@ -223,6 +235,9 @@ Deprecated
 
 페이지/스크롤 모드를 설정한다. Reflowable 책에서만 동작한다.
 
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
+
 ### Parameters
 {: .no_toc }
 
@@ -237,6 +252,9 @@ Deprecated
 {: .mt-2 }
 
 페이지 넘김 애니메이션을 사용할지 여부를 설정한다.
+
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
 
 ### Parameters
 {: .no_toc }
@@ -253,6 +271,9 @@ Deprecated
 
 한 페이지/두 페이지 보기 모드를 설정한다.
 
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
+
 ### Parameters
 {: .no_toc }
 
@@ -267,6 +288,9 @@ Deprecated
 {: .mt-2 }
 
 미디어 오버레이 요소를 클릭하여 재생을 시작할 지 여부를 설정한다.
+
+{: .deprecated }
+updateSettings(key, value) 메서드 사용
 
 ### Parameters
 {: .no_toc }
@@ -398,8 +422,8 @@ Deprecated
 
 &nbsp;
 
-⚠️ `toggleBookmark`, `createHighlight`, `changeHighlight`, `removeHighlight`는 페이지에 북마크 및 하이라이트를 **표시**하며, `setAnnotations`를 통해 전달받은 Annotation 목록은 업데이트**하지 않는다**. 해당 목록에 포함되어 있지 않은 Annotation은 아이템이 변경되면 페이지에서 삭제된다. 따라서 책을 보는동안 아이템 변경에 관계 없이 북마크 및 하이라이트를 유지하려면 위 메서드들에 의해 업데이트된 어노테이션 목록을 `setAnnotations`를 통해 뷰어에 전달해주어야 한다.
-{: .bg-yellow-000 .p-3 }
+{: .note }
+`toggleBookmark`, `createHighlight`, `changeHighlight`, `removeHighlight`는 페이지에 북마크 및 하이라이트를 **표시**하며, `setAnnotations`를 통해 전달받은 Annotation 목록은 업데이트**하지 않는다**. 해당 목록에 포함되어 있지 않은 Annotation은 아이템이 변경되면 페이지에서 삭제된다. 따라서 책을 보는동안 아이템 변경에 관계 없이 북마크 및 하이라이트를 유지하려면 위 메서드들에 의해 업데이트된 어노테이션 목록을 `setAnnotations`를 통해 뷰어에 전달해주어야 한다.
 
 ---
 
@@ -494,5 +518,5 @@ Range에 포함된 미디어 오버레이 요소를 재생한다. Range에 미�
 | ------- | -------- | ----------- |
 | `scale` | `number` | 확대/축소 스케일을 나타내는 퍼센트 값 |
 
-⚠️ 데스크탑 환경에 최적화하여 개발되었으며, 터치 디바이스에서는 브라우저 네이티브 핀치 줌 사용 권장.
-{: .bg-yellow-000 .p-3 }
+{: .note }
+데스크탑 환경에 최적화하여 개발되었으며, 터치 디바이스에서는 브라우저 네이티브 핀치 줌 사용 권장.
