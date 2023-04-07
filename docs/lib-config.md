@@ -19,10 +19,12 @@ Interface
 
 | Name | Type | Description |
 | - | - | - |
-| `contentsBaseURL` | `string` | 아이템 로드 및 아이템 내 리소스 요청시 사용할 주소를 설정 |
-| `bukJSONBaseURL` | `string | undefined` | buk.json 요청시 사용할 주소를 설정, 없으면 `contentsBaseURL` 사용 |
+| `contentsBaseURL` | `string` | 아이템 로드 및 아이템 내 리소스 요청시 사용할 주소 |
+| `bukJSONBaseURL` | `string | undefined` | buk.json 요청시 사용할 주소, 없으면 `contentsBaseURL` 사용 |
+| `pdfTextBaseURL` | `string | undefined` | PDF 페이지 텍스트 요청시 사용할 주소 |
 | `fonts` | [`FontConfig`](#fontconfig)`| undefined` | 뷰어에서 지원할 폰트 |
 | `highlightStyles` | [`HighlightStyle[]`](#highlightstyle)`| undefined` | 하이라이트 스타일 |
+| `contentsStyles` | `string[] | undefined` | 콘텐츠에 추가할 스타일 URL 또는 CSS 문자열 |
 | `initialSettings` | [`SettingValues`](#settingvalues)`| undefined` | 읽기 설정 초기값 |
 | `updateHTTPRequest` | [`UpdateHTTPRequestFn`](#updatehttprequestfn)`| undefined` | 뷰어에서 일어나는 요청을 수정하는 함수 |
 | `canChangeAddress` | [`CanChangeAddressFn`](#canchangeaddressfn)`| undefined` | 새로운 주소로 변경되기 전 호출되는 함수. 리턴값으로 뷰어의 주소 변경 동작을 제어할 수 있음. |

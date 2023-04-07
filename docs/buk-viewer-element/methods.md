@@ -525,3 +525,50 @@ Range에 포함된 미디어 오버레이 요소를 재생한다. Range에 미�
 
 {: .note }
 데스크탑 환경에 최적화하여 개발되었으며, 터치 디바이스에서는 브라우저 네이티브 핀치 줌 사용 권장.
+
+---
+
+# Range
+
+## createRangeFromElements(startId, endId, iid?)
+
+요소의 id를 이용해 시작 요소, 끝 요소를 포함하는 Range를 가져온다. iid 파라미터는 한 페이지에 여러 아이템이 표시되고 있을 때 사용할 수 있다. 요소가 없거나 iid가 잘못된 경우 에러를 던진다.
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `startId` | `string` | 시작 요소의 id |
+| `endId` | `string` | 끝 요소의 id |
+| `iid` | `string` | 요소를 찾을 아이템의 iid |
+
+### Returns
+{: .no_toc }
+
+[`Range`](https://developer.mozilla.org/en-US/docs/Web/API/Range)
+
+## getVisibleRanges()
+
+현재 페이지에 보여지고 있는 내용의 범위를 나타내는 Range를 가져온다. 리턴되는 배열의 길이는 현재 화면에 표시되고 있는 아이템의 개수와 같다.
+
+### Returns
+{: .no_toc }
+
+[`Range[]`](https://developer.mozilla.org/en-US/docs/Web/API/Range)
+
+## getAddressFromRange(range)
+
+Range로 부터 텍스트 범위를 가져와 해당 위치를 가리키는 Address 객체를 가져온다. Range로 부터 텍스트 범위를 가져올 수 없는 경우 `null`을 리턴한다
+
+### Parameters
+{: .no_toc }
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `range` | [`Range`](https://developer.mozilla.org/en-US/docs/Web/API/Range) | |
+
+### Returns
+{: .no_toc }
+
+[`Address`]({{ "/address#address-1" | prepend: site.baseurl }}) \| `null`

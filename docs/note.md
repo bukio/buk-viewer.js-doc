@@ -6,6 +6,16 @@ nav_order: 9
 ---
 
 # 참고
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ## 보기 설정 복원
 
@@ -36,3 +46,29 @@ declare global {
   }
 }
 ```
+
+## 콘텐츠 기본 스타일 및 테마 수정
+
+다음의 CSS 변수들을 오버라이드하여 일부 콘텐츠 기본 스타일 및 테마를 수정할 수 있다.
+
+`buk-viewer` 요소에서 사용하는 변수
+
+- 여백 관련
+  - `--bukv-contents-padding-top`
+  - `--bukv-contents-padding-bottom`
+- 테마 관련
+  - `--bukv-contents-bg-color-light`
+  - `--bukv-contents-bg-color-sepia`
+  - `--bukv-contents-bg-color-dark`
+  
+콘텐츠 스타일에서 사용하는 변수
+
+- 여백 관련
+  - `--bukv-padding-left`
+  - `--bukv-padding-right`
+  - `--bukv-padding-top`
+  - `--bukv-padding-bottom`
+- 테마 관련
+  - `--bukv-text-color`
+  - `--bukv-bg-color`
+  - `--bukv-column-rule-img`
