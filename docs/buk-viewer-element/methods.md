@@ -476,6 +476,11 @@ Range에 포함된 미디어 오버레이 요소를 재생한다. Range에 미�
 
 현재 미디어 오버레이가 재생중인지 여부를 가져온다.
 
+### Returns
+{: .no_toc }
+
+`boolean`
+
 ## setMediaOverlayPlaybackRate(value)
 
 미디어 오버레이 재생 배속을 설정한다.
