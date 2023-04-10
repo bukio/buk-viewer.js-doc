@@ -42,6 +42,5 @@ nav_order: 1
 - Firefox
 - Safari
 - Edge
-- IE 11+
 - iOS 12+
 - Android
