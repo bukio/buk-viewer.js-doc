@@ -51,7 +51,7 @@ declare global {
 
 다음의 CSS 변수들을 오버라이드하여 일부 콘텐츠 기본 스타일 및 테마를 수정할 수 있다.
 
-`buk-viewer` 요소에서 사용하는 변수
+`<buk-viewer>` 요소 및 하위 요소들에서 사용하는 변수
 
 - 여백 관련
   - `--bukv-contents-padding-top`
@@ -61,7 +61,7 @@ declare global {
   - `--bukv-contents-bg-color-sepia`
   - `--bukv-contents-bg-color-dark`
   
-콘텐츠 스타일에서 사용하는 변수
+콘텐츠에 삽입되는 뷰어 기본 스타일에서 사용하는 변수
 
 - 여백 관련
   - `--bukv-padding-left`
