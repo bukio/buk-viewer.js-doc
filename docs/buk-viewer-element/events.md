@@ -126,7 +126,7 @@ buk.json 로드 실패 시 발생
 
 ## addressChange
 
-현재 표시중인 페이지 변경 시 발생
+주소가 변경될 때 발생, 주소는 뷰어가 표시하고 있는 페이지에 대한 위치 정보를 주로 나타낸다.
 
 ### AddressChangeEvent
 {: .no_toc }
@@ -140,7 +140,7 @@ buk.json 로드 실패 시 발생
 
 ## settingsChange
 
-읽기 설정이 변경됐을 때 발생
+읽기 설정이 변경될 때 발생
 
 ### SettingsChangeEvent
 {: .no_toc }
@@ -154,7 +154,7 @@ buk.json 로드 실패 시 발생
 
 ## pageInfoChange
 
-페이지(전체 페이지, 현재 페이지)가 변경됐을 때 발생
+페이지(전체 페이지, 현재 페이지)가 변경될 때 발생
 
 ### PageInfoChangeEvent
 {: .no_toc }
