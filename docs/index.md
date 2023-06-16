@@ -14,8 +14,8 @@ nav_order: 1
 - 읽기 설정 (테마, 폰트, 두 페이지 보기 등)
 - 하이라이트 및 북마크
 - 책 내 검색
-- [미디어 오버레이](https://www.w3.org/publishing/epub3/epub-mediaoverlays.html)
-- [종이책 페이지](https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-pagelist)
+- [미디어 오버레이](https://www.w3.org/TR/epub-33/#sec-media-overlays)
+- [종이책 페이지](https://www.w3.org/TR/epub-33/#sec-nav-pagelist)
 
 ## 장점
 
