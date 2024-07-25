@@ -301,6 +301,21 @@ updateSettings(key, value) 메서드 사용
 
 ---
 
+# 콘텐츠 CSS 스타일 변경
+
+## setContentsStyles(styles)
+
+콘텐츠에 추가되는 CSS 스타일을 지정하는 `LibConfig.contentsStyles`를 새로운 값으로 교체한다.
+
+### Parameters
+{: .no_toc }
+
+| Name       | Type      | Description |
+| ---------- | --------- | ----------- |
+| `styles` | `string[]` | CSS 문자열의 배열 |
+
+---
+
 # 책 내 검색
 
 ## search(keyword, callback)

@@ -24,7 +24,8 @@ Interface
 | `pdfTextBaseURL` | `string | undefined` | PDF 페이지 텍스트 요청시 사용할 주소 |
 | `fonts` | [`FontConfig`](#fontconfig)`| undefined` | 뷰어에서 지원할 폰트 |
 | `highlightStyles` | [`HighlightStyle[]`](#highlightstyle)`| undefined` | 하이라이트 스타일 |
-| `contentsStyles` | `string[] | undefined` | 콘텐츠에 추가할 스타일 URL 또는 CSS 문자열 |
+| `contentsStyleURLs` | `string[] | undefined` | 콘텐츠에 추가할 외부 스타일시트 URL의 배열 |
+| `contentsStyles` | `string[] | undefined` | 콘텐츠에 추가할 CSS 문자열의 배열 |
 | `initialSettings` | [`SettingValues`](#settingvalues)`| undefined` | 읽기 설정 초기값 |
 | `updateHTTPRequest` | [`UpdateHTTPRequestFn`](#updatehttprequestfn)`| undefined` | 뷰어에서 일어나는 요청을 수정하는 함수 |
 | `canChangeAddress` | [`CanChangeAddressFn`](#canchangeaddressfn)`| undefined` | 새로운 주소로 변경되기 전 호출되는 함수. 리턴값으로 뷰어의 주소 변경 동작을 제어할 수 있음. |
