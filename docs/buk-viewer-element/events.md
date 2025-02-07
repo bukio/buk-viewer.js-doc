@@ -166,8 +166,7 @@ buk.json 로드 실패 시 발생
 | ---------------------- | ---------------- | ------------------------------------------------------ |
 | `pageCount`       | `number`         | 아이템 내 전체 페이지 수                               |
 | `page`          | `number`         | 아이템 내 현재 페이지 번호                             |
-| `printPageCount`  | `number | null` | 종이책 전체 페이지 수                                  |
-| `printPages`    | `number[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
+| `printPages`    | `string[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
 | `tocIndex` | `number` | 현재 보여지는 페이지에 해당하는 목차의 인덱스, 해당하는 목차가 없는 경우 -1 |
 
 ## bookmarkStateChange

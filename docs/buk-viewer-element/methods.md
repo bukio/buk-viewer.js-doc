@@ -77,14 +77,14 @@ nav_order: 1
 
 ## goToPrintPage(page)
 
-EPUB의 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-pagelist)에 명시된 종이책 페이지로 이동한다. EPUB에 [Page List](https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-pagelist)가 없는 경우 아무런 동작도 하지 않는다.
+EPUB의 [Page List](https://www.w3.org/TR/epub-33/#sec-nav-pagelist)에 명시된 종이책 페이지로 이동한다. EPUB에 [Page List](https://www.w3.org/TR/epub-33/#sec-nav-pagelist)가 없는 경우 아무런 동작도 하지 않는다.
 
 ### Parameters
 {: .no_toc }
 
 | Name   | Type     | Description          |
 | ------ | -------- | -------------------- |
-| `page` | `number` | 이동할 종이책 페이지 |
+| `page` | `string` | 이동할 종이책 페이지 |
 
 ---
 
