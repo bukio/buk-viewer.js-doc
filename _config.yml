@@ -28,7 +28,7 @@ github_username: bukio
 aux_links:
   "View on Github":
     - "https://github.com/bukio/buk-viewer.js-doc"
-nav_footer: "Current Version: 2.7.0"
+nav_footer: "Current Version: 2.8.0"
 
 # Build settings
 remote_theme: bukio/just-the-docs

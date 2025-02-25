@@ -29,7 +29,7 @@ Interface
 | `initialSettings` | [`SettingValues`](#settingvalues)`| undefined` | 읽기 설정 초기값 |
 | `updateHTTPRequest` | [`UpdateHTTPRequestFn`](#updatehttprequestfn)`| undefined` | 뷰어에서 일어나는 요청을 수정하는 함수 |
 | `canChangeAddress` | [`CanChangeAddressFn`](#canchangeaddressfn)`| undefined` | 새로운 주소로 변경되기 전 호출되는 함수. 리턴값으로 뷰어의 주소 변경 동작을 제어할 수 있음. |
-
+| `preserveSpacesInSearch` | `boolean | undefined` | 책 내 검색 시 띄어쓰기 포함 여부. 기본값은 `false`로 띄어쓰기를 무시하고 검색. |
 
 Interface
 {: .label .m-0 .mt-6 }
