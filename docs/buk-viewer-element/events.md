@@ -168,6 +168,7 @@ buk.json 로드 실패 시 발생
 | `page`          | `number`         | 아이템 내 현재 페이지 번호                             |
 | `printPages`    | `string[]`       | 현재 페이지에 보여지는 종이책 페이지 번호              |
 | `tocIndex` | `number` | 현재 보여지는 페이지에 해당하는 목차의 인덱스, 해당하는 목차가 없는 경우 -1 |
+| `printPageRange` | `{ start: { pct: number }, end: { pct: number } }` | 현재 페이지가 종이책에서 어느 범위에 해당하는지에 대한 데이터 |
 
 ## bookmarkStateChange
 
